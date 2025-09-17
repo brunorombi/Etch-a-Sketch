@@ -35,7 +35,6 @@ header {
 .grid {
     display: flex;
     flex-wrap: wrap;
-    width: 580px;
     height: 580px;
 }
 
@@ -43,6 +42,10 @@ header {
     flex: 1 1 calc(100% / 16);
     border: 1px solid black;
     background-color: white;
+}
+
+.block-color {
+    background-color: blue;
 }
 
 footer {
