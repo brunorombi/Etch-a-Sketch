@@ -13,9 +13,9 @@ function createGrid(gridSize) {
   for (let i = 0; i < totalBlocks; i++) {
     let block = document.createElement('div');
     block.classList.add('block');
+    block.style.flex = `1 1 calc(100% / ${gridSize})`;
     gridElement.append(block);
   }
-
   trailBlock();
 }
 
@@ -24,6 +24,12 @@ createGrid(gridSize);
 function setupGridResize(buttonElement) {
   buttonElement.addEventListener("click", () => {
     let newSize = parseInt(prompt("Digite o tamanho do seu grid"));
+    if (newSize > 100) {
+      newSize = 100
+      alert("Maximum grid is 100");
+    } else if(!newSize) {
+      newSize = 16;
+    }
     createGrid(newSize);
   })
 }
